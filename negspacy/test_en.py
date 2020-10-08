@@ -27,7 +27,7 @@ def build_docs():
 
     docs.append(("That might not be Barack Obama.", [("Barack Obama", False)]))
 
-    return docs
+    return docs    
 
 
 def build_med_docs():
@@ -98,7 +98,6 @@ def test_en():
             print(e.text, e._.negex)
             assert (e.text, e._.negex) == d[1][i]
 
-
 def test_umls():
     nlp = spacy.load("en_core_sci_sm")
     negex = Negex(
@@ -163,8 +162,8 @@ def test_issue7():
 
 if __name__ == "__main__":
     test()
+    test_en()
     test_umls()
-    test_bad_beharor()
     test_own_terminology()
     test_get_patterns()
     test_issue7()
